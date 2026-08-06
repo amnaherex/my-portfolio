@@ -1,46 +1,46 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import gsap from 'gsap';
+let gsap: typeof import('gsap').gsap;
 
 	let card: HTMLDivElement;
  let subtitle :HTMLParagraphElement	
-	onMount(() => {
-		// Card entrance animation
-		gsap.from(card, {
-			y: 80,
+ onMount(async () => {
+	const module = await import('gsap');
+	gsap = module.gsap;
+
+	// Card entrance animation
+	gsap.from(card, {
+		y: 80,
+		opacity: 0,
+		rotation: -20,
+		duration: 1.2,
+		ease: 'power3.out'
+	});
+
+	const shapes = gsap.utils.toArray<HTMLElement>('.floating-shape');
+
+	shapes.forEach((shape, index) => {
+		gsap.from(shape, {
+			y: -80,
 			opacity: 0,
-			rotation: -20,
-			duration: 1.2,
-			ease: 'power3.out'
+			scale: 0,
+			rotation: gsap.utils.random(-180, 180),
+			duration: 1,
+			delay: index * 0.15,
+			ease: 'back.out(1.7)'
 		});
 
-		// Get all floating shapes
-		const shapes = gsap.utils.toArray<HTMLElement>('.floating-shape');
-
-		shapes.forEach((shape, index) => {
-			// Entrance animation
-			gsap.from(shape, {
-				y: -80,
-				opacity: 0,
-				scale: 0,
-				rotation: gsap.utils.random(-180, 180),
-				duration: 1,
-				delay: index * 0.15,
-				ease: 'back.out(1.7)'
-			});
-
-			// Floating animation
-			gsap.to(shape, {
-				y: gsap.utils.random(-15, -35),
-				x: gsap.utils.random(-8, 8),
-				rotation: gsap.utils.random(-15, 15),
-				duration: gsap.utils.random(2.5, 4),
-				repeat: -1,
-				yoyo: true,
-				ease: 'sine.inOut'
-			});
+		gsap.to(shape, {
+			y: gsap.utils.random(-15, -35),
+			x: gsap.utils.random(-8, 8),
+			rotation: gsap.utils.random(-15, 15),
+			duration: gsap.utils.random(2.5, 4),
+			repeat: -1,
+			yoyo: true,
+			ease: 'sine.inOut'
 		});
 	});
+});
 	function handleMouseLeave() {
 	gsap.to(card, {
 		rotateX: 0,

@@ -72,7 +72,7 @@
 
 	<!-- Website Content -->
 
-	<main class="relative z-10 pt-10">
+	<main class="relative z-10 pt-5">
 
 		<Hero />
 

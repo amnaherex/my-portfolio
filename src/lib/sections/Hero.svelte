@@ -212,36 +212,36 @@
 
 		<a
 	href="#contact"
-	class="group flex items-center gap-3"
+	class="group flex items-center gap-2 rounded-full border border-white/60 bg-white/35 px-2 py-2	 shadow-[0_8px_30px_rgba(0,0,0,0.08)] backdrop-blur-xl ring-1 ring-white/30 transition-all  mt-3.5 duration-500 hover:-translate-y-0.5 hover:bg-white/50 hover:shadow-[0_15px_40px_rgba(0,0,0,0.12)]"
 >
-	<!-- Blinking status -->
+	<!-- Green Status -->
 
-	<span class="relative flex h-2.5 w-2.5">
+	<span class="relative ml-1.5 flex h-2.5 w-2.5">
 		<span
-			class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"
+			class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-70"
 		></span>
 
 		<span
-			class="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500"
+			class="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]"
 		></span>
 	</span>
 
 	<!-- CTA Text -->
 
 	<span
-		class="text-[11px] font-semibold tracking-[0.18em] text-black transition-all duration-300 group-hover:tracking-[0.25em]"
+		class="px-1 text-[11px] font-semibold tracking-[0.16em] text-black transition-all duration-300 group-hover:tracking-[0.22em]"
 	>
 		LET'S BUILD
 	</span>
 
-	<!-- Arrow -->
+	<!-- Arrow Circle -->
 
 	<span
-		class="flex h-10 w-10 items-center justify-center rounded-full border border-black/15 bg-white/60 shadow-[0_8px_25px_rgba(0,0,0,0.08)] backdrop-blur-xl transition-all duration-500 group-hover:rotate-45 group-hover:bg-black group-hover:text-white group-hover:shadow-[0_12px_30px_rgba(0,0,0,0.18)]"
+		class="flex h-5 w-5 items-center justify-center rounded-full bg-black text-white shadow-md transition-all duration-500 group-hover:rotate-[-45deg] group-hover:scale-105"
 	>
 		<svg
-			class="h-4 w-4"
-			viewBox="0 0 24 24"	
+			class="h-3.5 w-3.5"
+			viewBox="0 0 24 24"
 			fill="none"
 			stroke="currentColor"
 			stroke-width="2"
